@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.r_a_type = new System.Windows.Forms.ComboBox();
+            this.friend_v = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.sender_a_type = new System.Windows.Forms.ComboBox();
@@ -44,14 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.friend_v = new System.Windows.Forms.ComboBox();
-            this.r_a_type = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.r_a_type);
             this.groupBox1.Controls.Add(this.friend_v);
             this.groupBox1.Controls.Add(this.label6);
@@ -73,7 +75,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Owe/Lend";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // r_a_type
+            // 
+            this.r_a_type.FormattingEnabled = true;
+            this.r_a_type.Location = new System.Drawing.Point(413, 423);
+            this.r_a_type.Name = "r_a_type";
+            this.r_a_type.Size = new System.Drawing.Size(453, 28);
+            this.r_a_type.TabIndex = 20;
+            // 
+            // friend_v
+            // 
+            this.friend_v.FormattingEnabled = true;
+            this.friend_v.Location = new System.Drawing.Point(412, 119);
+            this.friend_v.Name = "friend_v";
+            this.friend_v.Size = new System.Drawing.Size(453, 28);
+            this.friend_v.TabIndex = 19;
+            this.friend_v.SelectedIndexChanged += new System.EventHandler(this.friend_v_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -214,23 +232,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // friend_v
+            // label7
             // 
-            this.friend_v.FormattingEnabled = true;
-            this.friend_v.Location = new System.Drawing.Point(412, 119);
-            this.friend_v.Name = "friend_v";
-            this.friend_v.Size = new System.Drawing.Size(453, 28);
-            this.friend_v.TabIndex = 19;
-            this.friend_v.SelectedIndexChanged += new System.EventHandler(this.friend_v_SelectedIndexChanged);
-            // 
-            // r_a_type
-            // 
-            this.r_a_type.FormattingEnabled = true;
-            this.r_a_type.Location = new System.Drawing.Point(413, 423);
-            this.r_a_type.Name = "r_a_type";
-            this.r_a_type.Size = new System.Drawing.Size(453, 28);
-            this.r_a_type.TabIndex = 20;
-            this.r_a_type.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(278, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Owe/Lend";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // OweLend
             // 
@@ -242,7 +252,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "OweLend";
             this.Text = "OweLend";
-            this.Load += new System.EventHandler(this.OweLend_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -270,5 +279,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox friend_v;
         private System.Windows.Forms.ComboBox r_a_type;
+        private System.Windows.Forms.Label label7;
     }
 }

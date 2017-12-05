@@ -112,7 +112,6 @@ namespace ExpenseManager
                         
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             account.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             amt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }

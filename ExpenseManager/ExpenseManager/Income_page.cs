@@ -35,6 +35,7 @@ namespace ExpenseManager
             amt.Text = "";
             income.Text = "";
             txt_iname.Text = "";
+            bal.Text = "";
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -204,12 +205,22 @@ namespace ExpenseManager
             txt_iname.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             amt.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             income.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateTimePicker.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString()); 
+            dateTimePicker.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
         }
 
         private void txt_iname_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            con.Open();
+            cmd2 = new SqlCommand("SELECT Balance FROM dbo.Account WHERE Username = @usr AND AccountType = @account;", con);
+            cmd2.Parameters.AddWithValue("@account", txt_iname.Text);
+            cmd2.Parameters.AddWithValue("@usr", GlobalClass.GlobalVar);
+            SqlDataReader DR2 = cmd2.ExecuteReader();
+            while (DR2.Read())
+            {
+                bal.Text =  DR2[0].ToString();
+            }
+            DR2.Close();
+            con.Close();
         }
 
         private void DisplayData()

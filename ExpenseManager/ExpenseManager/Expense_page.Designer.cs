@@ -41,6 +41,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.back = new System.Windows.Forms.Button();
             this.txt_iname = new System.Windows.Forms.ComboBox();
+            this.bal = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(695, 323);
+            this.add.Location = new System.Drawing.Point(696, 358);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(114, 46);
             this.add.TabIndex = 6;
@@ -104,7 +106,7 @@
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(855, 323);
+            this.edit.Location = new System.Drawing.Point(856, 358);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(96, 46);
             this.edit.TabIndex = 7;
@@ -114,7 +116,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(1005, 323);
+            this.delete.Location = new System.Drawing.Point(1006, 358);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(101, 46);
             this.delete.TabIndex = 8;
@@ -158,12 +160,32 @@
             this.txt_iname.Name = "txt_iname";
             this.txt_iname.Size = new System.Drawing.Size(306, 28);
             this.txt_iname.TabIndex = 13;
+            this.txt_iname.SelectedIndexChanged += new System.EventHandler(this.txt_iname_SelectedIndexChanged);
+            // 
+            // bal
+            // 
+            this.bal.Enabled = false;
+            this.bal.Location = new System.Drawing.Point(800, 299);
+            this.bal.Name = "bal";
+            this.bal.Size = new System.Drawing.Size(306, 26);
+            this.bal.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(644, 305);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 20);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Current Balance";
             // 
             // Expense_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 669);
+            this.Controls.Add(this.bal);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_iname);
             this.Controls.Add(this.back);
             this.Controls.Add(this.dataGridView1);
@@ -200,5 +222,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.ComboBox txt_iname;
+        private System.Windows.Forms.TextBox bal;
+        private System.Windows.Forms.Label label5;
     }
 }
